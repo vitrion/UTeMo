@@ -1,0 +1,4 @@
+Epochs,Batch Size,Optimizer,Initializer,Test ACC
+150,8,SGD,HeNormal,0.9320651888847351
+200,8,SGD,HeNormal,0.9510869383811951
+250,8,SGD,HeNormal,0.9538043737411499
