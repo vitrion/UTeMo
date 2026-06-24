@@ -113,14 +113,14 @@ directory.
 
 The scripts `5_stratified_emotion_splitter.py`, `6_merge_train_val.py`, and `8_data_augmentation.py` require selecting a specific dataset partitioning scheme by modifying the global variable `AUDIO_PART_SEL`. To reproduce the results reported in the article, this variable must be set as follows:
 
-- `PART_SEL = '60_20_20'` for FSER experiments.
+- `AUDIO_PART_SEL = '60_20_20'` for FSER experiments.
 
 **Step 2: Train models**
 
 After preprocessing, run:
 - `./training_eval/9_trainer.py`
 
-This script train a deep learning model using audio (FSER) representations. Also, it requires selecting the partitioning scheme by setting the global variable `PART_SEL` using the same configuration described above. Additionally, this script must be executed in four sequential stages controlled by the variable `stage`:
+This script train a deep learning model using audio (FSER) representations. Also, it requires selecting the partitioning scheme by setting the global variable `PART_SEL` using the same configuration described above (`AUDIO_PART_SEL = '60_20_20'`). Additionally, this script must be executed in four sequential stages controlled by the variable `stage`:
 
 1. `stage = 'coarse'`, which performs a coarse grid search and stores results in a CSV file in the `./logs` directory; 
 2. `stage = 'fine'`, which performs a refined search over the number of epochs using the best configuration from the previous stage;
