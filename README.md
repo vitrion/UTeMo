@@ -91,12 +91,6 @@ This indicates:
 	- `LICENSE`
 	- `README.md`
 	- `requirements.txt`
-	
-## 💥 UTeMo FSER weights
-
-With the aim of making the Keras weight file of the FSER model presented in this research work publicly available, it can be accessed through the following link:
-
-👉 [Download UTeMo FSER weights](https://1drv.ms/u/c/26b45e0f43f4667b/IQAu3da7ZBnFTLgfNjCsub5jAZCliyxAZ9zsOT7LuOWyggs?e=9BZfa5)
 
 ## ⚙️ Usage Instructions
 
@@ -125,7 +119,7 @@ This script train a deep learning model using audio (FSER) representations. Also
 1. `stage = 'coarse'`, which performs a coarse grid search and stores results in a CSV file in the `./logs` directory; 
 2. `stage = 'fine'`, which performs a refined search over the number of epochs using the best configuration from the previous stage;
 3. `stage = 'train'`, which trains the model using the best hyperparameters from the fine search and generates training curves (accuracy and loss); and
-4. `stage = 'test'`, which conducts final training using a merged `train+val` set, saves the trained model in the `./models` directory (in Keras format), and outputs evaluation metrics (accuracy and F1-score) into a log file.
+4. `stage = 'test'`, which conducts final training using a merged `train+val` set, saves the trained model in the `./models` directory (in Keras format), and outputs evaluation metrics (accuracy and F1-score) into a log file. Note that, due to GitHub's maximum file size limit per file (100 MB), the FSER model weights (Keras) file generated after running 9_trainer.py with stage == 'test' has been provided via a OneDrive cloud link for user access.
 
 These stages must be executed sequentially to fully reproduce the experimental pipeline.
 
@@ -135,6 +129,12 @@ Optionally, after running the trainer script, you should run:
 - `./training_eval/10_leave_actor_out.py`
 
 This script will perform a leave-one-actor cross-validation, where all samples from each actor are separated into a test set, and the deep learning model is trained using all samples from the other actors. This procedure aims to evaluate the generalizability of the predictive model, ensuring that the system learns universal characteristics of emotions and not just the tone of voice of a particular actor. The results of this exercise are saved to a CSV file in the `./logs` directory.
+
+## 💥 UTeMo FSER weights
+
+With the aim of making the Keras weight file of the FSER model presented in this research work publicly available, it can be accessed through the following link:
+
+👉 [Download UTeMo FSER weights](https://1drv.ms/u/c/26b45e0f43f4667b/IQAu3da7ZBnFTLgfNjCsub5jAZCliyxAZ9zsOT7LuOWyggs?e=9BZfa5)
 
 ## 👨‍🔬 Authors
 
