@@ -34,10 +34,10 @@ def get_colors(n):
 RESPONSES_CSV = script_dir / "SurveyResponses.csv"
 REAL_EMOTIONS_CSV = script_dir / "real_emotions.csv"
 
-OUT_FIG1 = figures_dir / "fig3_3d_emotion_counts.png"
-OUT_FIG2 = figures_dir / "fig4_polygon_categorical_proportions.png"
-OUT_FIG3 = figures_dir / "fig5_pie_overall_intensity_likert5.png"
-OUT_FIG4 = figures_dir / "fig6_grouped_intensity_by_emotion_likert5.png"
+OUT_FIG1 = figures_dir / "fig4_3d_emotion_counts.png"
+OUT_FIG2 = figures_dir / "fig5_polygon_categorical_proportions.png"
+OUT_FIG3 = figures_dir / "fig6_pie_overall_intensity_likert5.png"
+OUT_FIG4 = figures_dir / "fig7_grouped_intensity_by_emotion_likert5.png"
 
 # Same philosophy as compute_inconsistency.py:
 # detect repeated emotion/intensity columns by regex

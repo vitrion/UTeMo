@@ -64,15 +64,15 @@ This indicates:
 		- `noise.wav`
 	- `supplementary_files`:
 		- `figures`:
-			- `fig3_3d_emotion_counts.png`
-			- `fig4_polygon_categorical_proportions.png`
-			- `fig5_pie_overall_intensity_likert5.png`
-			- `fig6_grouped_intensity_by_emotion_likert5.png`
+			- `fig4_3d_emotion_counts.png`
+			- `fig5_polygon_categorical_proportions.png`
+			- `fig6_pie_overall_intensity_likert5.png`
+			- `fig7_grouped_intensity_by_emotion_likert5.png`
 		- `compute_kappa_of_fleiss.py`
-		- `origin_of_emotion_phrases.pdf`
 		- `plot_emotions.py`
 		- `real_emotions.csv`
 		- `sample_class_distribuition.csv`
+		- `spanish_phrases.pdf`
 		- `SurveyResponses.csv`
 	- `training_eval`:
 		- `figures`:
@@ -85,10 +85,10 @@ This indicates:
 			- `fser_training_history_60_20_20.csv`
 		- `models`:
 			- `__pycache__`
-			- `fser_60_20_20.keras`
 			- `model_eval.py`
 		- `9_trainer.py`
 		- `10_leave_actor_out.py`
+	- `LICENSE`
 	- `README.md`
 	- `requirements.txt`
 	
