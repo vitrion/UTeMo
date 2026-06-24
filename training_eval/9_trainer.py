@@ -86,7 +86,7 @@ if __name__ == "__main__":
         elif stage == 'fine':
             try:
                 df = pd.read_csv(
-                    log_dir / f"{MODEL_ID}_{stage}_{PART_SEL}.csv")
+                    log_dir / f"{MODEL_ID}_coarse_{PART_SEL}.csv")
                 max_idx = df['Test ACC'].idxmax()
                 best = df.loc[max_idx]
 

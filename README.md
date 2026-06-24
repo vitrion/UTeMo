@@ -92,6 +92,12 @@ This indicates:
 	- `README.md`
 	- `requirements.txt`
 	
+## 💥 UTeMo FSER weights
+
+With the aim of making the Keras weight file of the FSER model presented in this research work publicly available, it can be accessed through the following link:
+
+👉 [Download UTeMo FSER weights](https://1drv.ms/u/c/26b45e0f43f4667b/IQAu3da7ZBnFTLgfNjCsub5jAZCliyxAZ9zsOT7LuOWyggs?e=9BZfa5)
+
 ## ⚙️ Usage Instructions
 
 To reproduce preprocessing and training:
