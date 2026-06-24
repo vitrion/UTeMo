@@ -17,7 +17,7 @@ SEED = 42
 PART_SEL = '60_20_20'  # FSER: '60_20_20'; MobileNet: '40_30_30'
 MODEL_ID = 'fser' # or 'mobilenet'
 MODALITY = 'audio' # or 'image' for MobileNet
-stage = 'coarse'  # Stages: 'coarse', 'fine', 'train', 'test'
+stage = 'train'  # Stages: 'coarse', 'fine', 'train', 'test'
 allow_early_stopping = (stage == 'coarse' or stage == 'fine')
 learning_rate = 0.001
 
@@ -194,7 +194,7 @@ if __name__ == "__main__":
                     len(logical_gpus), "Logical GPU")
         except RuntimeError as e:
             print(e)
-            
+
         try:
             df = pd.read_csv(
                 log_dir / f"{MODEL_ID}_fine_{PART_SEL}.csv")
@@ -216,7 +216,7 @@ if __name__ == "__main__":
 
         data = get_dataset(train_path, val_path, trainplusval_path, test_path, batch_size, image_size, stage, SEED)
         if stage == 'test':
-            test_acc, test_f1, _, _, model = create_train_and_test_model(data,
+            test_acc, test_f1, _, model = create_train_and_test_model(data,
                                                                     epochs, batch_size, optimizer, initializer, stage, learning_rate, MODEL_ID, False, allow_early_stopping, False)
             model.save(models_dir / f"{MODEL_ID}_{PART_SEL}.keras")
             
@@ -236,7 +236,7 @@ if __name__ == "__main__":
                 history_df = pd.read_csv(log_dir / f"{MODEL_ID}_training_history_{PART_SEL}.csv")
             else:
                 print("No training history found. Starting training...")
-                _, _, _, history, _ = create_train_and_test_model(data,
+                _, _, history, _ = create_train_and_test_model(data,
                                                             epochs, batch_size, optimizer, initializer, stage, learning_rate, MODEL_ID, False, allow_early_stopping, True)
                 history_df = pd.DataFrame(history.history)
                 history_df.insert(
