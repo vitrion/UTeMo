@@ -194,6 +194,7 @@ if __name__ == "__main__":
                     len(logical_gpus), "Logical GPU")
         except RuntimeError as e:
             print(e)
+            
         try:
             df = pd.read_csv(
                 log_dir / f"{MODEL_ID}_fine_{PART_SEL}.csv")
